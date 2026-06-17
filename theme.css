@@ -333,7 +333,9 @@ body.theme-light {
 .markdown-rendered mark,
 .cm-highlight {
     background-color: transparent !important;
-    text-decoration: underline wavy #D97757 !important;
+    text-decoration: underline !important;
+    text-decoration-style: wavy !important;
+    text-decoration-color: #D97757 !important;
     text-underline-offset: 4px;
     color: inherit !important;
 }
@@ -341,7 +343,9 @@ body.theme-light {
 /* 下划线 (Solid Underline) */
 .markdown-rendered u,
 .cm-underline {
-    text-decoration: underline solid #D97757 !important;
+    text-decoration: underline !important;
+    text-decoration-style: solid !important;
+    text-decoration-color: #D97757 !important;
     text-underline-offset: 4px;
 }
 
@@ -426,8 +430,7 @@ body.theme-light {
 }
 
 /* Code Blocks (代码块) */
-.markdown-rendered pre,
-.cm-embed-block:has(.HyperMD-codeblock) {
+.markdown-rendered pre {
     background-color: var(--code-background) !important;
     border: 0.5px solid var(--background-modifier-border) !important;
     border-radius: 8px !important;
@@ -446,11 +449,7 @@ body.theme-light {
     line-height: 1.625 !important;
 }
 
-/* Clear margins inside editor code blocks */
-.cm-embed-block:has(.HyperMD-codeblock) .cm-line {
-    padding: 0 !important;
-    margin: 0 !important;
-}
+
 
 /* CodeMirror Editor font alignment */
 .cm-editor .cm-scroller {
@@ -490,8 +489,7 @@ body.theme-light {
 }
 
 /* Obsidian Callouts Styling mapped to Claude Alert styling */
-.callout,
-.cm-embed-block:has(.callout) {
+.callout {
     border-radius: 8px !important;
     border: 1px solid var(--background-modifier-border) !important;
     border-left: 3px solid rgb(var(--callout-color)) !important;
