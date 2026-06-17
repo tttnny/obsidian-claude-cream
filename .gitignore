@@ -1,0 +1,8 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Obsidian configs (if any local workspace files sneak in)
+.obsidian/
+.trash/
