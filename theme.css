@@ -366,99 +366,114 @@ body.theme-dark,
 
 /* Reading View Headings */
 .markdown-rendered h1 {
-    font-size: 1.5rem !important;
-    line-height: 1.7rem !important;
-    margin-top: 1.5rem !important;
-    margin-bottom: 0.5rem !important;
-    padding: 0 2rem 0 0.5rem !important;
+    font-family: var(--font-interface) !important;
+    font-size: 1.875rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.025em !important;
+    font-weight: 700 !important;
+    margin-top: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+    padding: 0 2rem 0 0.25rem !important;
 }
 
 .markdown-rendered h2 {
-    font-size: 1.25rem !important;
-    line-height: 1.65rem !important;
-    margin-top: 1.75rem !important;
+    font-family: var(--font-interface) !important;
+    font-size: 1.375rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.015em !important;
+    font-weight: 600 !important;
+    margin-top: 1.85rem !important;
     margin-bottom: 0.75rem !important;
-    padding: 0 2rem 0.4rem 0.5rem !important;
+    padding: 0 2rem 0.4rem 0.25rem !important;
     border-bottom: 1px solid var(--background-modifier-border) !important;
 }
 
 .markdown-rendered h3 {
+    font-family: var(--font-interface) !important;
     font-size: 1.15rem !important;
-    line-height: 1.5rem !important;
-    margin-top: 1.25rem !important;
-    margin-bottom: 0.25rem !important;
-    padding: 0 2rem 0 0.5rem !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    margin-top: 1.35rem !important;
+    margin-bottom: 0.35rem !important;
+    padding: 0 2rem 0 0.25rem !important;
 }
 
 .markdown-rendered h4 {
+    font-family: var(--font-interface) !important;
     font-size: 1rem !important;
-    line-height: 1.5rem !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
     margin-top: 1.25rem !important;
     margin-bottom: 0.25rem !important;
-    padding: 0 2rem 0 0.5rem !important;
+    padding: 0 2rem 0 0.25rem !important;
 }
 
 .markdown-rendered h5,
 .markdown-rendered h6 {
+    font-family: var(--font-interface) !important;
     font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
+    line-height: 1.35 !important;
+    font-weight: 600 !important;
     margin-top: 1.25rem !important;
     margin-bottom: 0.25rem !important;
-    padding: 0 2rem 0 0.5rem !important;
+    padding: 0 2rem 0 0.25rem !important;
 }
 
 /* Editing View (Live Preview) Headings */
 .HyperMD-header-1, .cm-header-1 {
-    font-size: 1.5rem !important;
-    line-height: 1.7rem !important;
-    padding-top: 1.5rem !important;
-    padding-bottom: 0.5rem !important;
-    padding-left: 0.5rem !important;
+    font-size: 1.875rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.025em !important;
+    padding-top: 1.75rem !important;
+    padding-bottom: 0.75rem !important;
+    padding-left: 0.25rem !important;
     padding-right: 2rem !important;
     font-family: var(--font-interface) !important;
     font-weight: 700 !important;
 }
 
 .HyperMD-header-2, .cm-header-2 {
-    font-size: 1.25rem !important;
-    line-height: 1.65rem !important;
-    padding-top: 1.5rem !important;
-    padding-bottom: 0.5rem !important;
-    padding-left: 0.5rem !important;
+    font-size: 1.375rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.015em !important;
+    padding-top: 1.85rem !important;
+    padding-bottom: 0.4rem !important;
+    padding-left: 0.25rem !important;
     padding-right: 2rem !important;
     font-family: var(--font-interface) !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid var(--background-modifier-border) !important;
 }
 
 .HyperMD-header-3, .cm-header-3 {
     font-size: 1.15rem !important;
-    line-height: 1.5rem !important;
-    padding-top: 1.25rem !important;
-    padding-bottom: 0.25rem !important;
-    padding-left: 0.5rem !important;
+    line-height: 1.4 !important;
+    padding-top: 1.35rem !important;
+    padding-bottom: 0.35rem !important;
+    padding-left: 0.25rem !important;
     padding-right: 2rem !important;
     font-family: var(--font-interface) !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
 }
 
 .HyperMD-header-4, .cm-header-4 {
     font-size: 1rem !important;
-    line-height: 1.5rem !important;
+    line-height: 1.4 !important;
     padding-top: 1.25rem !important;
     padding-bottom: 0.25rem !important;
-    padding-left: 0.5rem !important;
+    padding-left: 0.25rem !important;
     padding-right: 2rem !important;
     font-family: var(--font-interface) !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
 }
 
 .HyperMD-header-5, .cm-header-5,
 .HyperMD-header-6, .cm-header-6 {
     font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
+    line-height: 1.35 !important;
     padding-top: 1.25rem !important;
     padding-bottom: 0.25rem !important;
-    padding-left: 0.5rem !important;
+    padding-left: 0.25rem !important;
     padding-right: 2rem !important;
     font-family: var(--font-interface) !important;
     font-weight: 600 !important;
