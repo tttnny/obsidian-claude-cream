@@ -37,9 +37,10 @@
    2. Core Obsidian Color Variables (Light Mode Only)
    ------------------------------------------------------------------------- */
 
+:root,
 .theme-light {
-    /* Main Backgrounds */
-    --background-primary: #faf9f5;
+    /* Main Backgrounds (Claude.ai & code.claude.com FDFDF7 / FAF9F5) */
+    --background-primary: #fdfdf7;
     --background-primary-alt: #f5f4ed;
     --background-secondary: #fcfbf8;
     --background-secondary-alt: #f0eee6;
@@ -47,17 +48,18 @@
     /* Active & Hover states */
     --background-modifier-hover: #f0eee6;
     --background-modifier-active-hover: #e8e6dc;
-    --background-modifier-border: #1f1e1d1a;
-    --background-modifier-border-hover: #1f1e1d40;
+    --background-modifier-border: rgba(31, 30, 29, 0.12);
+    --background-modifier-border-hover: rgba(31, 30, 29, 0.28);
     --background-modifier-border-focus: #D97757;
 
-    /* Claude clay-orange accent */
+    /* Claude clay-orange accent & primary light */
     --accent-h: 15;
     --accent-s: 63%;
     --accent-l: 60%;
     --color-accent: #D97757;
     --color-accent-1: #E58A6B;
     --color-accent-2: #A94F2D;
+    --primary-light: #D4A27F;
     --interactive-accent: #D97757;
     --interactive-accent-hover: #A94F2D;
     --interactive-accent-rgb: 217, 119, 87;
@@ -117,12 +119,12 @@
     --h5-color: #141413;
     --h6-color: #141413;
 
-    --h1-font: var(--font-text);
-    --h2-font: var(--font-text);
-    --h3-font: var(--font-text);
-    --h4-font: var(--font-text);
-    --h5-font: var(--font-text);
-    --h6-font: var(--font-text);
+    --h1-font: var(--font-interface);
+    --h2-font: var(--font-interface);
+    --h3-font: var(--font-interface);
+    --h4-font: var(--font-interface);
+    --h5-font: var(--font-interface);
+    --h6-font: var(--font-interface);
 
     --h1-weight: 700;
     --h2-weight: 700;
@@ -132,9 +134,9 @@
     --h6-weight: 600;
 
     /* Workspace / Layout Backgrounds */
-    --titlebar-background: #faf9f5;
-    --titlebar-background-focused: #faf9f5;
-    --statusbar-background: #faf9f5;
+    --titlebar-background: #fdfdf7;
+    --titlebar-background-focused: #fdfdf7;
+    --statusbar-background: #fdfdf7;
     --ribbon-background: #f5f4ed;
     --ribbon-background-hover: #e8e6dc;
     --ribbon-background-active: #e8e6dc;
@@ -157,16 +159,16 @@
     --code-comment: #6e7687;
 
     /* Tag pill styling */
-    --tag-background: rgba(61, 61, 58, 0.05);
-    --tag-background-hover: rgba(61, 61, 58, 0.1);
-    --tag-color: #8a2424;
-    --tag-color-hover: #8a2424;
-    --tag-border-color: rgba(31, 30, 29, 0.15);
+    --tag-background: rgba(217, 119, 87, 0.08);
+    --tag-background-hover: rgba(217, 119, 87, 0.15);
+    --tag-color: #D97757;
+    --tag-color-hover: #A94F2D;
+    --tag-border-color: rgba(217, 119, 87, 0.2);
     --tag-border-width: 0.5px;
-    --tag-radius: 4px;
+    --tag-radius: 6px;
 
     /* Blockquote overrides */
-    --blockquote-border-color: rgba(31, 30, 29, 0.1);
+    --blockquote-border-color: rgba(31, 30, 29, 0.12);
     --blockquote-border-width: 4px;
     --blockquote-text-color: #3d3d3a;
 }
@@ -179,7 +181,7 @@ body.theme-light {
 
 /* -------------------------------------------------------------------------
    Dark Mode Theme Custom Properties (body.theme-dark)
-   Reference: Reference/claude-dark.css
+   Reference: Reference/claude-dark.css & code.claude.com Docs
    ------------------------------------------------------------------------- */
 
 body.theme-dark,
@@ -188,28 +190,29 @@ body.theme-dark,
     --color-accent: #D97757;
     --color-accent-1: #D97757;
     --color-accent-2: #E6987D;
+    --primary-light: #D4A27F;
     --interactive-accent: #D97757;
     --interactive-accent-hover: #E6987D;
     --interactive-accent-rgb: 217, 119, 87;
     --interactive-accent-hsl: 15, 63%, 60%;
     --text-on-accent: #FFFFFF;
 
-    /* Main Backgrounds (Claude Dark Palette: #262624, #2c2c2a, #30302e) */
-    --background-primary: #262624;
-    --background-primary-alt: #1f1e1d;
-    --background-secondary: #2c2c2a;
-    --background-secondary-alt: #30302e;
-    --background-modifier-border: rgba(222, 220, 209, 0.15);
-    --background-modifier-border-hover: rgba(222, 220, 209, 0.3);
-    --background-modifier-border-focus: rgba(222, 220, 209, 0.4);
-    --background-modifier-hover: rgba(255, 255, 255, 0.06);
-    --background-modifier-active-hover: rgba(255, 255, 255, 0.12);
-    --background-modifier-form-field: #1f1e1d;
+    /* Main Backgrounds (Claude Code & Claude.ai Official Dark Palette: #121214 / #09090B) */
+    --background-primary: #121214;
+    --background-primary-alt: #09090b;
+    --background-secondary: #18181b;
+    --background-secondary-alt: #1f1f23;
+    --background-modifier-border: rgba(255, 255, 255, 0.09);
+    --background-modifier-border-hover: rgba(255, 255, 255, 0.2);
+    --background-modifier-border-focus: #D97757;
+    --background-modifier-hover: rgba(255, 255, 255, 0.05);
+    --background-modifier-active-hover: rgba(255, 255, 255, 0.1);
+    --background-modifier-form-field: #09090b;
 
     /* Text Color Palette */
-    --text-normal: #faf9f5;
-    --text-muted: #c2c0b6;
-    --text-faint: #818898;
+    --text-normal: #ededed;
+    --text-muted: #a0a0a0;
+    --text-faint: #707070;
     --text-accent: #D97757;
     --text-accent-hover: #E6987D;
     --text-error: #f47b85;
@@ -217,12 +220,19 @@ body.theme-dark,
     --text-warning: #fbab60;
 
     /* Headings Defaults */
-    --h1-color: #faf9f5;
-    --h2-color: #faf9f5;
-    --h3-color: #faf9f5;
-    --h4-color: #faf9f5;
-    --h5-color: #faf9f5;
-    --h6-color: #faf9f5;
+    --h1-color: #ededed;
+    --h2-color: #ededed;
+    --h3-color: #ededed;
+    --h4-color: #ededed;
+    --h5-color: #ededed;
+    --h6-color: #ededed;
+
+    --h1-font: var(--font-interface);
+    --h2-font: var(--font-interface);
+    --h3-font: var(--font-interface);
+    --h4-font: var(--font-interface);
+    --h5-font: var(--font-interface);
+    --h6-font: var(--font-interface);
 
     /* Selection & Highlights */
     --text-selection: rgba(217, 119, 87, 0.35);
@@ -230,44 +240,46 @@ body.theme-dark,
 
     /* Scrollbars */
     --scrollbar-bg: transparent;
-    --scrollbar-thumb-bg: rgba(222, 220, 209, 0.25);
-    --scrollbar-active-thumb-bg: #a5a49d;
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
+    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.35);
 
     /* Workspace / Layout Backgrounds */
-    --titlebar-background: #262624;
-    --titlebar-background-focused: #262624;
-    --statusbar-background: #262624;
-    --ribbon-background: #20201e;
-    --ribbon-background-hover: #30302e;
-    --ribbon-background-active: #30302e;
+    --titlebar-background: #121214;
+    --titlebar-background-focused: #121214;
+    --statusbar-background: #121214;
+    --ribbon-background: #09090b;
+    --ribbon-background-hover: #18181b;
+    --ribbon-background-active: #18181b;
 
     /* Left Nav Panels */
-    --nav-item-background-hover: #30302e;
-    --nav-item-background-active: #383836;
-    --nav-item-color-hover: #faf9f5;
-    --nav-item-color-active: #faf9f5;
+    --nav-item-background-hover: #18181b;
+    --nav-item-background-active: #232328;
+    --nav-item-color-hover: #ededed;
+    --nav-item-color-active: #ededed;
 
     /* Buttons */
-    --button-bg: #30302e;
-    --button-color: #faf9f5;
-    --button-hover-bg: #383836;
-    --button-active-bg: #30302e;
+    --button-bg: #1f1f23;
+    --button-color: #ededed;
+    --button-hover-bg: #27272a;
+    --button-active-bg: #1f1f23;
 
     /* Code Block & Inline Code */
-    --code-background: rgba(48, 48, 46, 0.6);
+    --code-background: rgba(255, 255, 255, 0.04);
     --code-normal: #f4a9a9;
     --code-comment: #818898;
 
     /* Tag pill styling */
-    --tag-background: rgba(222, 220, 209, 0.08);
-    --tag-background-hover: rgba(222, 220, 209, 0.15);
+    --tag-background: rgba(217, 119, 87, 0.12);
+    --tag-background-hover: rgba(217, 119, 87, 0.22);
     --tag-color: #E6987D;
     --tag-color-hover: #E6987D;
-    --tag-border-color: rgba(222, 220, 209, 0.2);
+    --tag-border-color: rgba(217, 119, 87, 0.3);
+    --tag-border-width: 0.5px;
+    --tag-radius: 6px;
 
     /* Blockquote overrides */
-    --blockquote-border-color: rgba(222, 220, 209, 0.2);
-    --blockquote-text-color: #c2c0b6;
+    --blockquote-border-color: rgba(255, 255, 255, 0.15);
+    --blockquote-text-color: #a0a0a0;
 
     background-color: var(--background-primary);
     color: var(--text-normal);
@@ -340,6 +352,14 @@ body.theme-dark,
     padding-left: 0.25rem !important;
 }
 
+/* Ordered List Numbers (Mintlify / Claude Docs List Marker) */
+.markdown-rendered ol > li::marker,
+.cm-formatting-list-ol {
+    font-family: var(--font-interface) !important;
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+}
+
 /* -------------------------------------------------------------------------
    4. Aligned Headings Hierarchy (Editor & Reading View)
    ------------------------------------------------------------------------- */
@@ -356,9 +376,10 @@ body.theme-dark,
 .markdown-rendered h2 {
     font-size: 1.25rem !important;
     line-height: 1.65rem !important;
-    margin-top: 1.5rem !important;
-    margin-bottom: 0.5rem !important;
-    padding: 0 2rem 0 0.5rem !important;
+    margin-top: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
+    padding: 0 2rem 0.4rem 0.5rem !important;
+    border-bottom: 1px solid var(--background-modifier-border) !important;
 }
 
 .markdown-rendered h3 {
@@ -394,7 +415,7 @@ body.theme-dark,
     padding-bottom: 0.5rem !important;
     padding-left: 0.5rem !important;
     padding-right: 2rem !important;
-    font-family: var(--font-text) !important;
+    font-family: var(--font-interface) !important;
     font-weight: 700 !important;
 }
 
@@ -405,7 +426,7 @@ body.theme-dark,
     padding-bottom: 0.5rem !important;
     padding-left: 0.5rem !important;
     padding-right: 2rem !important;
-    font-family: var(--font-text) !important;
+    font-family: var(--font-interface) !important;
     font-weight: 700 !important;
 }
 
@@ -416,7 +437,7 @@ body.theme-dark,
     padding-bottom: 0.25rem !important;
     padding-left: 0.5rem !important;
     padding-right: 2rem !important;
-    font-family: var(--font-text) !important;
+    font-family: var(--font-interface) !important;
     font-weight: 700 !important;
 }
 
@@ -427,7 +448,7 @@ body.theme-dark,
     padding-bottom: 0.25rem !important;
     padding-left: 0.5rem !important;
     padding-right: 2rem !important;
-    font-family: var(--font-text) !important;
+    font-family: var(--font-interface) !important;
     font-weight: 700 !important;
 }
 
@@ -439,7 +460,7 @@ body.theme-dark,
     padding-bottom: 0.25rem !important;
     padding-left: 0.5rem !important;
     padding-right: 2rem !important;
-    font-family: var(--font-text) !important;
+    font-family: var(--font-interface) !important;
     font-weight: 600 !important;
 }
 
@@ -547,6 +568,52 @@ body.theme-dark,
     font-size: 0.9em !important;
 }
 
+/* Keyboard Keys (kbd) */
+kbd {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 1.65em !important;
+    height: 1.55em !important;
+    margin: 0 0.12em !important;
+    padding: 0 0.45em !important;
+    vertical-align: 0.08em !important;
+    font-family: var(--font-interface) !important;
+    font-size: 0.78em !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    color: var(--text-normal) !important;
+    background-color: var(--button-bg) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: 4px !important;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-dark kbd {
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Hyperlinks & Internal Links */
+.markdown-rendered a,
+.internal-link,
+.external-link,
+.cm-hmd-internal-link,
+.cm-link {
+    color: var(--text-accent) !important;
+    text-decoration: none !important;
+    transition: color 0.12s ease-out;
+}
+
+.markdown-rendered a:hover,
+.internal-link:hover,
+.external-link:hover,
+.cm-hmd-internal-link:hover,
+.cm-link:hover {
+    color: var(--text-accent-hover) !important;
+    text-decoration: underline !important;
+}
+
 /* Code Blocks (代码块) */
 .markdown-rendered pre,
 .cm-embed-block:has(.HyperMD-codeblock) {
@@ -578,12 +645,18 @@ body.theme-dark,
     border-left-color: #D97757 !important;
 }
 
-/* Code block language tag / badge */
+/* Code block language tag / badge (Mintlify / Claude Docs Badge Pill) */
 .code-block-flair {
-    font-size: 0.75rem !important;
-    font-family: var(--font-text-theme), var(--font-text), sans-serif !important;
+    font-size: 0.72rem !important;
+    font-family: var(--font-interface) !important;
     color: var(--text-muted) !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    background-color: var(--background-secondary) !important;
+    border: 0.5px solid var(--background-modifier-border) !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
 }
 
 /* ----- 语法高亮 (Syntax Highlighting - Light Mode) ----- */
@@ -839,27 +912,56 @@ body.theme-dark .token.punctuation {
 
 /* Obsidian Callouts Styling mapped to Claude Alert styling */
 .callout {
-    border-radius: 8px !important;
+    border-radius: 10px !important;
     border: 1px solid var(--background-modifier-border) !important;
-    border-left: 3px solid rgb(var(--callout-color)) !important;
+    border-left: 3px solid rgb(var(--callout-color, 217, 119, 87)) !important;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.18)),
-                linear-gradient(90deg, rgba(var(--callout-color), 0.1), transparent 32%) !important;
-    box-shadow: 0 12px 28px -26px rgba(31, 30, 29, 0.12) !important;
+                linear-gradient(90deg, rgba(var(--callout-color, 217, 119, 87), 0.08), transparent 32%) !important;
+    box-shadow: 0 4px 16px -8px rgba(31, 30, 29, 0.06) !important;
     margin-bottom: 1rem !important;
-    padding: 0.8rem 1rem !important;
+    padding: 0.85rem 1.1rem !important;
+}
+
+body.theme-dark .callout {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+                linear-gradient(90deg, rgba(var(--callout-color, 217, 119, 87), 0.14), transparent 36%) !important;
+    box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.35) !important;
 }
 
 .callout-title {
     font-family: var(--font-interface) !important;
     font-weight: 700 !important;
-    font-size: 0.82em !important;
-    color: rgb(var(--callout-color)) !important;
+    font-size: 0.85em !important;
+    letter-spacing: 0.01em !important;
+    color: rgb(var(--callout-color, 217, 119, 87)) !important;
     margin-bottom: 0.35rem !important;
 }
 
 .callout-content {
     font-size: 0.95em !important;
-    line-height: 1.6 !important;
+    line-height: 1.65 !important;
+}
+
+/* Mintlify Specific Callout Type Mappings */
+.callout[data-callout="note"],
+.callout[data-callout="info"] {
+    --callout-color: 92, 107, 115;
+}
+
+.callout[data-callout="tip"],
+.callout[data-callout="success"] {
+    --callout-color: 104, 138, 93;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="important"] {
+    --callout-color: 251, 171, 96;
+}
+
+.callout[data-callout="caution"],
+.callout[data-callout="danger"],
+.callout[data-callout="error"] {
+    --callout-color: 217, 119, 87;
 }
 
 /* -------------------------------------------------------------------------
@@ -956,6 +1058,21 @@ body.theme-dark .token.punctuation {
     box-shadow: 0 16px 42px rgba(20, 20, 19, 0.17) !important;
 }
 
+/* Popover Hover Card & Glassmorphic Tooltips */
+.popover.hover-popover,
+.tooltip {
+    background-color: var(--background-primary) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14) !important;
+}
+
+body.theme-dark .popover.hover-popover,
+body.theme-dark .tooltip {
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55) !important;
+}
+
 .vertical-tab-header {
     background-color: var(--background-secondary) !important;
     border-right: 1px solid var(--background-modifier-border) !important;
@@ -1015,5 +1132,30 @@ body.theme-dark .token.punctuation {
 .tab-header.is-active {
     background-color: var(--background-primary) !important;
     border-top: 2px solid var(--text-accent) !important;
+    color: var(--text-normal) !important;
+}
+
+/* Quick Switcher & Command Palette Modal (Mintlify / Claude Docs Popup) */
+.suggestion-container {
+    background-color: var(--background-primary) !important;
+    border: 1px solid var(--background-modifier-border) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14) !important;
+    padding: 0.5rem !important;
+}
+
+body.theme-dark .suggestion-container {
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.55) !important;
+}
+
+.suggestion-item {
+    font-family: var(--font-interface) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 0.75rem !important;
+    color: var(--text-muted) !important;
+}
+
+.suggestion-item.is-selected {
+    background-color: var(--background-modifier-active-hover) !important;
     color: var(--text-normal) !important;
 }
