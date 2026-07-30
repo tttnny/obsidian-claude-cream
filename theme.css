@@ -50,7 +50,20 @@
     --background-modifier-border: #1f1e1d1a;
     --background-modifier-border-hover: #1f1e1d40;
     --background-modifier-border-focus: #D97757;
-    
+
+    /* Claude clay-orange accent */
+    --accent-h: 15;
+    --accent-s: 63%;
+    --accent-l: 60%;
+    --color-accent: #D97757;
+    --color-accent-1: #E58A6B;
+    --color-accent-2: #A94F2D;
+    --interactive-accent: #D97757;
+    --interactive-accent-hover: #A94F2D;
+    --interactive-accent-rgb: 217, 119, 87;
+    --interactive-accent-hsl: 15, 63%, 60%;
+    --text-on-accent: #FFFFFF;
+
     /* Text Color Palette */
     --text-normal: #141413;
     --text-muted: #3d3d3a;
@@ -519,8 +532,18 @@ body.theme-light {
 
 /* Titlebar */
 .titlebar {
-    background-color: var(--titlebar-background) !important;
-    border-bottom: 1px solid var(--background-modifier-border) !important;
+    /*
+     * The desktop titlebar overlays the workspace tab strip in recent
+     * Obsidian versions. An opaque background here hides the tabs and
+     * toolbar controls underneath it.
+     */
+    background-color: transparent !important;
+    border-bottom: none !important;
+}
+
+.workspace-tab-header-container {
+    background-color: var(--titlebar-background);
+    border-bottom: 1px solid var(--background-modifier-border);
 }
 
 /* Statusbar */
