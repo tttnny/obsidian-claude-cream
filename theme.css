@@ -86,7 +86,9 @@
     /* Base Typography Families */
     --font-text: "Anthropic Serif Web Text", Georgia, "Times New Roman", "Noto Serif SC", serif;
     --font-interface: "Anthropic Sans Web Text", "Noto Sans SC", system-ui, -apple-system, sans-serif;
-    --font-monospace: "Anthropic Mono Variable", "Source Han Sans SC", ui-monospace, monospace;
+    --font-monospace: "Anthropic Mono Variable", "SF Mono", Monaco, Consolas, "Liberation Mono", ui-monospace, monospace;
+    --font-monospace-override: var(--font-monospace);
+    --font-code: var(--font-monospace);
 
     /* Propagate Fonts Theme-Wide */
     --font-text-theme: var(--font-text);
@@ -169,8 +171,104 @@
     --blockquote-text-color: #3d3d3a;
 }
 
-/* Force Light Theme Colors always when app is in Light Mode */
+/* Light Theme Base Setup */
 body.theme-light {
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+}
+
+/* -------------------------------------------------------------------------
+   Dark Mode Theme Custom Properties (body.theme-dark)
+   Reference: Reference/claude-dark.css
+   ------------------------------------------------------------------------- */
+
+body.theme-dark,
+.theme-dark {
+    /* Brand Accent Colors */
+    --color-accent: #D97757;
+    --color-accent-1: #D97757;
+    --color-accent-2: #E6987D;
+    --interactive-accent: #D97757;
+    --interactive-accent-hover: #E6987D;
+    --interactive-accent-rgb: 217, 119, 87;
+    --interactive-accent-hsl: 15, 63%, 60%;
+    --text-on-accent: #FFFFFF;
+
+    /* Main Backgrounds (Claude Dark Palette: #262624, #2c2c2a, #30302e) */
+    --background-primary: #262624;
+    --background-primary-alt: #1f1e1d;
+    --background-secondary: #2c2c2a;
+    --background-secondary-alt: #30302e;
+    --background-modifier-border: rgba(222, 220, 209, 0.15);
+    --background-modifier-border-hover: rgba(222, 220, 209, 0.3);
+    --background-modifier-border-focus: rgba(222, 220, 209, 0.4);
+    --background-modifier-hover: rgba(255, 255, 255, 0.06);
+    --background-modifier-active-hover: rgba(255, 255, 255, 0.12);
+    --background-modifier-form-field: #1f1e1d;
+
+    /* Text Color Palette */
+    --text-normal: #faf9f5;
+    --text-muted: #c2c0b6;
+    --text-faint: #818898;
+    --text-accent: #D97757;
+    --text-accent-hover: #E6987D;
+    --text-error: #f47b85;
+    --text-success: #9be963;
+    --text-warning: #fbab60;
+
+    /* Headings Defaults */
+    --h1-color: #faf9f5;
+    --h2-color: #faf9f5;
+    --h3-color: #faf9f5;
+    --h4-color: #faf9f5;
+    --h5-color: #faf9f5;
+    --h6-color: #faf9f5;
+
+    /* Selection & Highlights */
+    --text-selection: rgba(217, 119, 87, 0.35);
+    --text-highlight-bg: transparent;
+
+    /* Scrollbars */
+    --scrollbar-bg: transparent;
+    --scrollbar-thumb-bg: rgba(222, 220, 209, 0.25);
+    --scrollbar-active-thumb-bg: #a5a49d;
+
+    /* Workspace / Layout Backgrounds */
+    --titlebar-background: #262624;
+    --titlebar-background-focused: #262624;
+    --statusbar-background: #262624;
+    --ribbon-background: #20201e;
+    --ribbon-background-hover: #30302e;
+    --ribbon-background-active: #30302e;
+
+    /* Left Nav Panels */
+    --nav-item-background-hover: #30302e;
+    --nav-item-background-active: #383836;
+    --nav-item-color-hover: #faf9f5;
+    --nav-item-color-active: #faf9f5;
+
+    /* Buttons */
+    --button-bg: #30302e;
+    --button-color: #faf9f5;
+    --button-hover-bg: #383836;
+    --button-active-bg: #30302e;
+
+    /* Code Block & Inline Code */
+    --code-background: rgba(48, 48, 46, 0.6);
+    --code-normal: #f4a9a9;
+    --code-comment: #818898;
+
+    /* Tag pill styling */
+    --tag-background: rgba(222, 220, 209, 0.08);
+    --tag-background-hover: rgba(222, 220, 209, 0.15);
+    --tag-color: #E6987D;
+    --tag-color-hover: #E6987D;
+    --tag-border-color: rgba(222, 220, 209, 0.2);
+
+    /* Blockquote overrides */
+    --blockquote-border-color: rgba(222, 220, 209, 0.2);
+    --blockquote-text-color: #c2c0b6;
+
     background-color: var(--background-primary);
     color: var(--text-normal);
 }
@@ -408,9 +506,9 @@ body.theme-light {
     box-sizing: border-box !important;
     width: 13px !important;
     height: 13px !important;
-    border: 1px solid #d0cfce !important;
+    border: 1px solid var(--background-modifier-border-hover) !important;
     border-radius: 2px !important;
-    background-color: #f7f6f5 !important;
+    background-color: var(--background-primary) !important;
     cursor: pointer !important;
     position: relative !important;
     display: inline-block !important;
@@ -420,8 +518,8 @@ body.theme-light {
 }
 
 .task-list-item-checkbox:checked {
-    background-color: #d0d0cf !important;
-    border-color: #d0cfce !important;
+    background-color: var(--text-muted) !important;
+    border-color: var(--text-muted) !important;
 }
 
 .task-list-item-checkbox:checked::after {
@@ -432,7 +530,7 @@ body.theme-light {
     top: 0px !important;
     width: 5px !important;
     height: 9px !important;
-    border: solid #faf9f5 !important;
+    border: solid var(--background-primary) !important;
     border-width: 0 2px 2px 0 !important;
     transform: rotate(45deg) !important;
 }
@@ -461,7 +559,11 @@ body.theme-light {
 }
 
 .markdown-rendered pre code,
-.HyperMD-codeblock {
+.markdown-rendered pre code *,
+.HyperMD-codeblock,
+.HyperMD-codeblock *,
+.cm-line.HyperMD-codeblock,
+.cm-line.HyperMD-codeblock * {
     font-family: var(--font-monospace) !important;
     color: var(--text-normal) !important;
     background-color: transparent !important;
@@ -651,8 +753,11 @@ body.theme-dark .token.punctuation {
     font-family: var(--font-monospace-theme) !important;
 }
 
-/* Force monospace for code block lines in Live Preview */
-.HyperMD-codeblock {
+/* Force monospace for code block lines and all child elements in Live Preview */
+.HyperMD-codeblock,
+.HyperMD-codeblock *,
+.cm-line.HyperMD-codeblock,
+.cm-line.HyperMD-codeblock * {
     font-family: var(--font-monospace) !important;
 }
 
