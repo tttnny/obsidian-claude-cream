@@ -95,6 +95,7 @@
     --font-default: var(--font-text);
 
     /* Spacing & Layout Alignment Variables */
+    --file-line-width: 752px;
     --p-spacing: 0.75rem;
     --heading-spacing: 1.5rem;
     --list-spacing: 0.25rem;
@@ -181,12 +182,18 @@ body.theme-light {
 /* Normalize Page Margins & Max-Width in Editor Sizer and Preview Sizer */
 .markdown-source-view.mod-cm6 .cm-sizer,
 .markdown-preview-view .markdown-preview-sizer {
-    max-width: 752px !important;
     margin: 0 auto !important;
     padding-top: 2.25rem !important;
     padding-bottom: 4.375rem !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+}
+
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer,
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer,
+.is-readable-line-width .cm-sizer,
+.is-readable-line-width .markdown-preview-sizer {
+    max-width: var(--file-line-width, 752px) !important;
 }
 
 /* Line Spacing and Paragraph Typography */
@@ -443,7 +450,8 @@ body.theme-light {
 }
 
 /* Code Blocks (代码块) */
-.markdown-rendered pre {
+.markdown-rendered pre,
+.cm-embed-block:has(.HyperMD-codeblock) {
     background-color: var(--code-background) !important;
     border: 0.5px solid var(--background-modifier-border) !important;
     border-radius: 8px !important;
@@ -452,17 +460,186 @@ body.theme-light {
     overflow: auto;
 }
 
-.markdown-rendered pre code {
+.markdown-rendered pre code,
+.HyperMD-codeblock {
     font-family: var(--font-monospace) !important;
     color: var(--text-normal) !important;
     background-color: transparent !important;
-    padding: 0 !important;
-    border: none !important;
     font-size: 0.875rem !important;
     line-height: 1.625 !important;
+    word-break: break-all !important;
 }
 
+/* Cursor style inside CodeMirror (Claude Clay-Orange) */
+.cm-cursor,
+.CodeMirror div.CodeMirror-cursor {
+    border-left-color: #D97757 !important;
+}
 
+/* Code block language tag / badge */
+.code-block-flair {
+    font-size: 0.75rem !important;
+    font-family: var(--font-text-theme), var(--font-text), sans-serif !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+}
+
+/* ----- 语法高亮 (Syntax Highlighting - Light Mode) ----- */
+
+/* 注释、Meta */
+.cm-comment,
+.cm-meta,
+.token.comment,
+.token.meta,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6e7687 !important;
+}
+
+/* 关键字、内置函数 */
+.cm-keyword,
+.cm-builtin,
+.token.keyword,
+.token.builtin,
+.token.atrule {
+    color: #8100c2 !important;
+}
+
+/* 字符串、字符 */
+.cm-string,
+.cm-string-2,
+.token.string,
+.token.char,
+.token.attr-value {
+    color: #008000 !important;
+}
+
+/* 数值、布尔值 */
+.cm-number,
+.token.number,
+.token.boolean {
+    color: #008080 !important;
+}
+
+/* 标签、属性名、属性、限定符、链接 */
+.cm-tag,
+.cm-attribute,
+.cm-property,
+.cm-qualifier,
+.cm-link,
+.token.tag,
+.token.attr-name,
+.token.property,
+.token.selector {
+    color: #b80a18 !important;
+}
+
+/* 运算符、Atom、变量 */
+.cm-operator,
+.cm-atom,
+.cm-variable,
+.token.operator,
+.token.variable,
+.token.entity {
+    color: #14181f !important;
+}
+
+/* 函数定义、类名 */
+.cm-def,
+.token.function,
+.token.class-name {
+    color: #0051c2 !important;
+}
+
+/* 变量2/3、参数、正则、重要 */
+.cm-variable-2,
+.cm-variable-3,
+.token.parameter,
+.token.regex,
+.token.important {
+    color: #b34a00 !important;
+}
+
+/* 括号、标点符号 */
+.cm-bracket,
+.token.punctuation {
+    color: #14181f !important;
+}
+
+/* ----- 语法高亮 (Syntax Highlighting - Dark Mode) ----- */
+
+body.theme-dark .cm-comment,
+body.theme-dark .cm-meta,
+body.theme-dark .token.comment,
+body.theme-dark .token.meta,
+body.theme-dark .token.prolog,
+body.theme-dark .token.doctype,
+body.theme-dark .token.cdata {
+    color: #818898 !important;
+}
+
+body.theme-dark .cm-keyword,
+body.theme-dark .cm-builtin,
+body.theme-dark .token.keyword,
+body.theme-dark .token.builtin,
+body.theme-dark .token.atrule {
+    color: #cc7bf4 !important;
+}
+
+body.theme-dark .cm-string,
+body.theme-dark .cm-string-2,
+body.theme-dark .token.string,
+body.theme-dark .token.char,
+body.theme-dark .token.attr-value {
+    color: #9be963 !important;
+}
+
+body.theme-dark .cm-number,
+body.theme-dark .token.number,
+body.theme-dark .token.boolean {
+    color: #5eeded !important;
+}
+
+body.theme-dark .cm-tag,
+body.theme-dark .cm-attribute,
+body.theme-dark .cm-property,
+body.theme-dark .cm-qualifier,
+body.theme-dark .cm-link,
+body.theme-dark .token.tag,
+body.theme-dark .token.attr-name,
+body.theme-dark .token.property,
+body.theme-dark .token.selector {
+    color: #f47b85 !important;
+}
+
+body.theme-dark .cm-operator,
+body.theme-dark .cm-atom,
+body.theme-dark .cm-variable,
+body.theme-dark .token.operator,
+body.theme-dark .token.variable,
+body.theme-dark .token.entity {
+    color: #eaecf0 !important;
+}
+
+body.theme-dark .cm-def,
+body.theme-dark .token.function,
+body.theme-dark .token.class-name {
+    color: #5ee4ff !important;
+}
+
+body.theme-dark .cm-variable-2,
+body.theme-dark .cm-variable-3,
+body.theme-dark .token.parameter,
+body.theme-dark .token.regex,
+body.theme-dark .token.important {
+    color: #fbab60 !important;
+}
+
+body.theme-dark .cm-bracket,
+body.theme-dark .token.punctuation {
+    color: #eaecf0 !important;
+}
 
 /* CodeMirror Editor font alignment */
 .cm-editor .cm-scroller {
@@ -477,6 +654,60 @@ body.theme-light {
 /* Force monospace for code block lines in Live Preview */
 .HyperMD-codeblock {
     font-family: var(--font-monospace) !important;
+}
+
+/* -------------------------------------------------------------------------
+   5. Mermaid Diagrams (Editor & Reading View)
+   ------------------------------------------------------------------------- */
+
+/* Mermaid 编辑态 & 渲染态：让下方预览面板参与文档流，避免覆盖后续正文 */
+.mermaid,
+.block-language-mermaid,
+.cm-embed-block:has(.mermaid),
+.cm-embed-block.markdown-rendered:has(.mermaid),
+.md-fences.md-fences-advanced.md-focus[lang="mermaid"] {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    white-space: normal !important;
+}
+
+.mermaid,
+.block-language-mermaid,
+.cm-embed-block:has(.mermaid) .mermaid,
+.cm-embed-block.markdown-rendered:has(.mermaid) .mermaid,
+.md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-fences-adv-panel,
+.md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-diagram-panel,
+.md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-diagram-panel-preview {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    clear: both !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0.75rem 0 !important;
+    overflow: auto !important;
+    transform: none !important;
+}
+
+.mermaid > svg,
+.mermaid svg,
+.block-language-mermaid svg,
+.md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-diagram-panel-preview > svg,
+.md-fences.md-fences-advanced.md-focus[lang="mermaid"] .md-diagram-panel-preview .mermaid-svg {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    font-family: var(--font-text-theme), var(--font-text), sans-serif !important;
 }
 
 /* -------------------------------------------------------------------------
