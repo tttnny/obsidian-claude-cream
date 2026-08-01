@@ -960,23 +960,23 @@ body.theme-dark .callout {
 /* Mintlify Specific Callout Type Mappings */
 .callout[data-callout="note"],
 .callout[data-callout="info"] {
-    --callout-color: 92, 107, 115;
+    --callout-color: rgb(92, 107, 115);
 }
 
 .callout[data-callout="tip"],
 .callout[data-callout="success"] {
-    --callout-color: 104, 138, 93;
+    --callout-color: rgb(104, 138, 93);
 }
 
 .callout[data-callout="warning"],
 .callout[data-callout="important"] {
-    --callout-color: 251, 171, 96;
+    --callout-color: rgb(251, 171, 96);
 }
 
 .callout[data-callout="caution"],
 .callout[data-callout="danger"],
 .callout[data-callout="error"] {
-    --callout-color: 217, 119, 87;
+    --callout-color: rgb(217, 119, 87);
 }
 
 /* -------------------------------------------------------------------------
